@@ -909,6 +909,15 @@ check_not_from "$OUT" fgrep -q "$CONTENTS"
 
 start_test But do proxy content if the Content-Type header is present.
 URL="$PRIMARY_SERVER/content_type_present/"
+echo $URL
+echo $URL
+echo $URL
+echo $URL
+echo $URL
+echo $URL
+echo $URL
+echo $URL
+echo $URL
 CONTENTS="This file should be proxied"
 
 
