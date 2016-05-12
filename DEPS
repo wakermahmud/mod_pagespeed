@@ -18,7 +18,7 @@ vars = {
   # all https URLs include the trailing slash, but it's unclear if SVN actually
   # respects this.
   "chromium_trunk": "https://src.chromium.org/svn/trunk/",
-  "chromium_git": "https://chromium.googlesource.com",
+  "chromium_git": "https://chromium.googlesource.com/",
   # We don't include @ inside the revision here as is customary since
   # we want to pass this into a -D flag
   "chromium_revision_num": "256281",
@@ -196,10 +196,10 @@ deps = {
     Var("closure_library") + Var("closure_library_revision"),
 
   "src/third_party/gflags":
-    Var('chromium_git') + '/external/webrtc/trunk/third_party/gflags' +
+    Var('chromium_git') + 'external/webrtc/trunk/third_party/gflags' +
     Var('gflags_revision'),
   "src/third_party/gflags/src":
-    Var('chromium_git') + '/external/gflags/src' + Var("gflags_src_revision"),
+    Var('chromium_git') + 'external/gflags/src' + Var("gflags_src_revision"),
 
   "src/third_party/google-sparsehash":
     Var("google_sparsehash_root") + Var("google_sparsehash_revision"),
