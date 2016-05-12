@@ -221,7 +221,8 @@ deps = {
   "src/tools/clang":
     Var("chromium_trunk") + "src/tools/clang/@" + Var("chromium_revision_num"),
 
-  "src/tools/gyp": From(Var("chromium_deps_root")),
+  "src/tools/gyp":
+    Var("chromium_git") + "external/gyp@" + "e679e688ba6db12336b79650c27fcf8a5ed21e60",
 
   "src/third_party/modp_b64":
     Var("chromium_trunk") + "src/third_party/modp_b64/@" +
