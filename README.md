@@ -31,3 +31,4 @@ mod_pagespeed is built on PageSpeed Optimization Libraries, deployed across 100,
 Curious to learn more about mod_pagespeed? Check out our GDL episode below, which covers the history of the project, an architectural overview of how mod_pagespeed works under the hood, and a number of operational tips and best practices for deploying mod_pagespeed.
 
 [![GDL Episode](http://img.youtube.com/vi/6uCAdQSHhmA/0.jpg)](http://www.youtube.com/watch?v=6uCAdQSHhmA)
+
