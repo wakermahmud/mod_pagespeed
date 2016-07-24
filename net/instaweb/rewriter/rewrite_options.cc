@@ -82,6 +82,8 @@ const char RewriteOptions::kContentExperimentVariantID[] =
     "ContentExperimentVariantID";
 const char RewriteOptions::kCriticalImagesBeaconEnabled[] =
     "CriticalImagesBeaconEnabled";
+const char RewriteOptions::kCriticalImagesBeaconUrl[] =
+  "CriticalImagesBeaconUrl"; // TODO(oschaaf): not specific to critical images maybe figure out a better name.
 const char RewriteOptions::kCssFlattenMaxBytes[] = "CssFlattenMaxBytes";
 const char RewriteOptions::kCssImageInlineMaxBytes[] = "CssImageInlineMaxBytes";
 const char RewriteOptions::kCssInlineMaxBytes[] = "CssInlineMaxBytes";
@@ -1663,6 +1665,15 @@ void RewriteOptions::AddProperties() {
       kBeaconUrl,
       kDirectoryScope,
       "URL for beacon callback injected by add_instrumentation.", false);
+  // TODO(oschaaf): naming - critical images beacon is no good, we may need
+  // something more generic.
+  // Also, this allows directory-level setting, which seems no good when I 
+  // look at NPS - which uses global_options_ to compare..
+  AddBaseProperty(
+      kDefaultBeaconUrls, &RewriteOptions::critical_images_beacon_url_, "cbu",
+      kCriticalImagesBeaconUrl,
+      kDirectoryScope,
+      "URL for beacon callback injected by the critical image finder.", false);
 
   // lazyload_images_after_onload_ is especially important for mobile,
   // where the recommendation is that you prefetch all the

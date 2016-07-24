@@ -1026,7 +1026,7 @@ apr_status_t InstawebHandler::instaweb_handler(request_rec* request) {
       if (!gurl.IsWebValid()) {
         ap_log_rerror(APLOG_MARK, APLOG_DEBUG, APR_SUCCESS, request,
                       "Ignoring invalid URL: %s", gurl.spec_c_str());
-      } else if (IsBeaconUrl(global_config->beacon_url(), gurl)) {
+      } else if (IsBeaconUrl(global_config->beacon_url(), gurl) || IsBeaconUrl(global_config->critical_images_beacon_url(), gurl)) {
         ret = instaweb_beacon_handler(request, server_context);
       // For the beacon accept any method; for all others only allow GETs.
       } else if (request->method_number != M_GET) {
